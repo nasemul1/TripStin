@@ -58,7 +58,7 @@ const Slider = () => {
                 </SplideSlide>
             </Splide>
         </div>
-        <Link to='/destinations' className='mt-6 px-10 py-2 rounded-md bg-black hover:bg-slate-800 text-white font-md'>See More</Link>
+        <Link to='/destinations' className='mt-6 px-6 sm:px-10 py-[6px] sm:py-2 rounded-md bg-black hover:bg-slate-800 text-sm text-white font-md'>See More</Link>
     </div>
   )
 }
