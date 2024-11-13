@@ -16,7 +16,6 @@ export default {
         'hero-img': "url('./src/images/components-img/hero.webp')",
         'blog': "url('./src/images/category-section/blog.webp')",
         'destination': "url('./src/images/category-section/destination.webp')",
-        'strip': "url('./src/images/category-section/strip.jpg')",
         'side': "url('./src/images/side.webp')",
         'chittagong': "url('./src/images/background/cox.jpg')",
         'sylhet': "url('./src/images/background/jaflong.jpg')",
