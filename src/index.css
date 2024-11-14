@@ -6,3 +6,7 @@
 a.active hr{
     display: block;
 }
+
+.PhoneInputInput:focus{
+    outline: none;
+}

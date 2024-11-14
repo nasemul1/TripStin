@@ -17,7 +17,7 @@ const Profile = () => {
   }
 
   return (
-    <div>
+    <div className='mt-28'>
       <button onClick={handleClick} className='px-6 py-2 bg-gray-950 text-white'>Logout</button>
     </div>
   )

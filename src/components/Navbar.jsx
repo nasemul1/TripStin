@@ -50,7 +50,7 @@ const Navbar = ({rName}) => {
           <p>SIGN IN</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-[#FBC108] hidden" />
         </NavLink>
-        <NavLink to="/signuo" className="flex flex-col items-center gap-1">
+        <NavLink to="/signup" className="flex flex-col items-center gap-1">
           <p>SIGN UP</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-[#FBC108] hidden" />
         </NavLink>
