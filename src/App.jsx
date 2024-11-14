@@ -14,6 +14,9 @@ import SBlog from './pages/Blog/SBLog'
 import Policy from './pages/Policy/Policy'
 import About from './pages/About/About'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const App = () => {
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] text-poppins'>
@@ -32,6 +35,7 @@ const App = () => {
         <Route path="/policy" element={<Policy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <ToastContainer />
     </div>
   )
 }

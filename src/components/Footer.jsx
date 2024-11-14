@@ -1,5 +1,4 @@
 import React from 'react'
-import 'boxicons'
 import logoW from '../assets/logo_w.png'
 import { Link } from 'react-router-dom'
 
