@@ -11,6 +11,8 @@ import Contact from './pages/Contact/Contact'
 import NotFound from './pages/NotFound/NotFound'
 import Navbar from './components/Navbar'
 import SBlog from './pages/Blog/SBLog'
+import Policy from './pages/Policy/Policy'
+import About from './pages/About/About'
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
         <Route path="/travel_blog/:id" element={<SBlog />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/policy" element={<Policy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

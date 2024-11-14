@@ -7,7 +7,7 @@ const Navbar = ({rName}) => {
     const [isOpen, setOpen] = useState(false);
 
   return (
-    <nav className="bg-white flex items-center justify-between py-5 font-medium">
+    <nav className="mx-auto w-full max-w-[1378px] bg-white flex items-center justify-between py-5 font-medium">
       <NavLink to="/">
         <img src={logo} className="w-24 md:w-28 lg:w-36" alt="logo" />
       </NavLink>

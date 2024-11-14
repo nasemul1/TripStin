@@ -23,36 +23,36 @@ const Slider = () => {
                     pagination: false,
                     arrows: true,
                     gap: '1.2em',
-                    perPage: 4
+                    perPage: 10
                 }}
             >
                 <SplideSlide>
-                    <Link to='/destinations' className='h-full rounded overflow-hidden flex flex-col items-center relative hover:scale-105 transition-transform duration-200'>
-                        <img src={cox} alt="cox barar" className='w-full'/>
+                    <Link to='/destinations' className='h-full rounded overflow-hidden flex flex-col items-center relative group'>
+                        <img src={cox} alt="cox barar" className='w-full group-hover:scale-125 duration-1000'/>
                         <p className='text-sm text-white font-bold absolute top-[80%]'>Cox's Bazar</p>
                     </Link>
                 </SplideSlide>
                 <SplideSlide>
-                    <Link to='/destinations' className='h-full rounded overflow-hidden flex flex-col items-center relative hover:scale-105 transition-transform duration-200'>
-                        <img src={jaflong} alt="cox barar" className='w-full'/>
+                    <Link to='/destinations' className='h-full rounded overflow-hidden flex flex-col items-center relative group'>
+                        <img src={jaflong} alt="cox barar" className='w-full group-hover:scale-125 duration-1000'/>
                         <p className='text-sm text-white font-bold absolute top-[80%]'>Jaflong</p>
                     </Link>
                 </SplideSlide>
                 <SplideSlide>
-                    <Link to='/destinations' className='h-full rounded overflow-hidden flex flex-col items-center relative hover:scale-105 transition-transform duration-200'>
-                        <img src={martin} alt="cox barar" className='w-full'/>
+                    <Link to='/destinations' className='h-full rounded overflow-hidden flex flex-col items-center relative group'>
+                        <img src={martin} alt="cox barar" className='w-full group-hover:scale-125 duration-1000'/>
                         <p className='text-sm text-white font-bold absolute top-[80%]'>Saint Martin</p>
                     </Link>
                 </SplideSlide>
                 <SplideSlide>
-                    <Link to='/destinations' className='h-full rounded overflow-hidden flex flex-col items-center relative hover:scale-105 transition-transform duration-200'>
-                        <img src={sundarban} alt="cox barar" className='w-full'/>
+                    <Link to='/destinations' className='h-full rounded overflow-hidden flex flex-col items-center relative group'>
+                        <img src={sundarban} alt="cox barar" className='w-full group-hover:scale-125 duration-1000'/>
                         <p className='text-sm text-white font-bold absolute top-[80%]'>Sundarban</p>
                     </Link>
                 </SplideSlide>
                 <SplideSlide>
-                    <Link to='/destinations' className='h-full rounded overflow-hidden flex flex-col items-center relative hover:scale-105 transition-transform duration-200'>
-                        <img src={sajek} alt="cox barar" className='w-full'/>
+                    <Link to='/destinations' className='h-full rounded overflow-hidden flex flex-col items-center relative group'>
+                        <img src={sajek} alt="cox barar" className='w-full group-hover:scale-125 duration-1000'/>
                         <p className='text-sm text-white font-bold absolute top-[80%]'>Sajek</p>
                     </Link>
                 </SplideSlide>

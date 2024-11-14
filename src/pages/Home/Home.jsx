@@ -5,16 +5,18 @@ import { Link } from 'react-router-dom';
 import Slider from '../../components/Slider';
 import Strip from '../../components/Strip';
 import Blog from '../../components/Blog';
-
+import Footer from '../../components/Footer';
+import bgBlog from "../../images/category-section/blog.webp"
+import bgDest from "../../images/category-section/destination.webp"
 
 const Home = () => {
     return (
-        <div className='w-full'>
+        <div className='mx-auto w-full max-w-[1378px]'>
             <div className='w-full h-52 sm:h-72 lg:h-[360px] flex justify-center relative'>
                 <div className='bg-hero-img bg-cover rounded-xl w-full h-full'>
                     <h1 className='w-full h-full text-white text-xl sm:text-2xl lg:text-3xl font-bold flex items-center justify-center'>Exploring Made Easy</h1>
                 </div>
-                <div className='mx-auto w-[70%] sm:w-[80%] md:w-[90%] absolute top-[80%] z-40 rounded-lg overflow-hidden'>
+                {/* <div className='mx-auto w-[70%] sm:w-[80%] md:w-[90%] absolute top-[80%] z-40 rounded-lg overflow-hidden'>
                     <Splide 
                         aria-label="My Favorite Images"
                         options={{
@@ -50,21 +52,22 @@ const Home = () => {
                             </Link>
                         </SplideSlide>
                     </Splide>
-                </div>
+                </div> */}
             </div>
-            <div className='mt-24 w-full flex flex-col sm:flex-row sm:justify-around gap-y-4'>
-                <Link to='/travel_blog' className="article-container w-full sm:w-[45%] sm:max-w-md 2xl:max-w-2xl h-24 sm:h-48 rounded-lg flex flex-col items-center justify-center relative">
-                    <div className="article-img-holder bg-blog"></div>
-                    <Link to='/travel_blog' className='absolute text-xl 2xl:text-2xl text-white font-bold font-merienda'>Travel Blog</Link>
+            <div className='mt-14 w-full flex flex-col sm:flex-row sm:justify-around gap-y-4'>
+                <Link to='/travel_blog' className="group overflow-hidden w-full sm:w-[45%] sm:max-w-md 2xl:max-w-lg h-24 sm:h-48 2xl:h-56 rounded-lg flex flex-col items-center justify-center relative">
+                    <img src={bgBlog} alt="image" className='group-hover:scale-125 duration-1000'/>
+                    <p className='absolute text-xl 2xl:text-2xl text-white font-bold font-merienda'>Travel Blog</p>
                 </Link>
-                <Link to='/destinations' className="article-container w-full sm:w-[45%] sm:max-w-md 2xl:max-w-2xl h-24 sm:h-48 rounded-lg flex flex-col items-center justify-center relative">
-                    <div className="article-img-holder bg-destination"></div>
-                    <Link to='/destinations' className='absolute text-xl 2xl:text-2xl text-white font-bold font-merienda'>Destinations</Link>
+                <Link to='/destinations' className="group overflow-hidden w-full sm:w-[45%] sm:max-w-md 2xl:max-w-lg h-24 sm:h-48 2xl:h-56 rounded-lg flex flex-col items-center justify-center relative">
+                    <img src={bgDest} alt="image" className='group-hover:scale-125 duration-1000'/>
+                    <p className='absolute text-xl 2xl:text-2xl text-white font-bold font-merienda'>Destinations</p>
                 </Link>
             </div>
             <Strip />
             <Slider />
-            <Blog limit={3} />
+            <Blog />
+            <Footer />
         </div>
     )
 }
