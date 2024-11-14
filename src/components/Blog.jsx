@@ -9,7 +9,7 @@ const Blog = ({limit}) => {
     return (
         <div className='mt-10 w-full flex flex-col items-center'>
             <h2 className='mb-3 text-2xl sm:text-3xl text-gray-700 font-bold font-merienda'>Travel Blog</h2>
-            <div className='w-full flex justify-center gap-x-6'>
+            <div className='w-full flex flex-col sm:flex-row sm:justify-between'>
                 <Link to='/travel_blog/1' className="p-2 flex flex-col items-center group">
                     <div className='w-[340px] h-[180px] overflow-hidden rounded-md'>
                         <img src={sajek} alt="" className='w-[340px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-125'/>
