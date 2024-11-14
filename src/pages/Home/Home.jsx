@@ -5,13 +5,12 @@ import { Link } from 'react-router-dom';
 import Slider from '../../components/Slider';
 import Strip from '../../components/Strip';
 import Blog from '../../components/Blog';
-import Footer from '../../components/Footer';
 import bgBlog from "../../images/category-section/blog.webp"
 import bgDest from "../../images/category-section/destination.webp"
 
 const Home = () => {
     return (
-        <div className='mx-auto w-full max-w-[1378px]'>
+        <div className='mx-auto mt-28 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
             <div className='w-full h-52 sm:h-72 lg:h-[360px] flex justify-center relative'>
                 <div className='bg-hero-img bg-cover rounded-xl w-full h-full'>
                     <h1 className='w-full h-full text-white text-xl sm:text-2xl lg:text-3xl font-bold flex items-center justify-center'>Exploring Made Easy</h1>
@@ -67,7 +66,6 @@ const Home = () => {
             <Strip />
             <Slider />
             <Blog />
-            <Footer />
         </div>
     )
 }

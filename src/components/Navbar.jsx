@@ -1,13 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { Divide as Hamburger } from 'hamburger-react';
 
 const Navbar = ({rName}) => {
     const [isOpen, setOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    useEffect(() => {
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, [lastScrollY]);
 
   return (
-    <nav className="mx-auto w-full max-w-[1378px] bg-white flex items-center justify-between py-5 font-medium">
+    <nav className={`px-5 sm:px-14 2xl:px-28 fixed top-0 z-50 w-screen bg-white shadow-md flex items-center justify-between py-5 font-medium transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}>
       <NavLink to="/">
         <img src={logo} className="w-24 md:w-28 lg:w-36" alt="logo" />
       </NavLink>
@@ -26,6 +48,10 @@ const Navbar = ({rName}) => {
         </NavLink>
         <NavLink to="/signin" className="flex flex-col items-center gap-1">
           <p>SIGN IN</p>
+          <hr className="w-2/4 border-none h-[1.5px] bg-[#FBC108] hidden" />
+        </NavLink>
+        <NavLink to="/signuo" className="flex flex-col items-center gap-1">
+          <p>SIGN UP</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-[#FBC108] hidden" />
         </NavLink>
       </ul>

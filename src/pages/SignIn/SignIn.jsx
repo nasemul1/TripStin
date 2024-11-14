@@ -33,13 +33,17 @@ const SignIn = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        toast.error("Login Failed 😕");
+        toast.error("Login Failed 😕", {
+          position: "bottom-right",
+        });
       }
       else {
         const result = await response.json();
         const { token } = result;
         localStorage.setItem('authToken', token);
-        toast("Login Sucessfull 🥳");
+        toast("Login Sucessfull 🥳", {
+          position: "bottom-right",
+        });
         navigate('/profile');
       }
     } catch (err) {
@@ -50,7 +54,7 @@ const SignIn = () => {
   };
 
   return (
-      <section className="min-h-screen flex items-center justify-center">
+      <section className="mt-10 min-h-screen flex items-center justify-center">
         <div className="flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
           <div className="md:w-1/2 px-8 md:px-16">
             <h2 className="font-bold text-2xl">Welcome Back👋</h2>

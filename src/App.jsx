@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Navbar from './components/Navbar'
 import Home from './pages/Home/Home'
 import SignIn from './pages/SignIn/SignIn'
 import SignUp from './pages/SignUp/SignUp'
@@ -9,17 +10,17 @@ import TravelBlog from './pages/TravelBlog/TravelBlog'
 import Profile from './pages/Profile/Profile'
 import Contact from './pages/Contact/Contact'
 import NotFound from './pages/NotFound/NotFound'
-import Navbar from './components/Navbar'
 import SBlog from './pages/Blog/SBLog'
 import Policy from './pages/Policy/Policy'
 import About from './pages/About/About'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from './components/Footer'
 
 const App = () => {
   return (
-    <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] text-poppins'>
+    <div className='w-screen text-poppins'>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/policy" element={<Policy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
       <ToastContainer />
     </div>
   )
