@@ -3,8 +3,12 @@
 @import "tailwindcss/utilities";
 
 
-a.active hr{
+/* a.active hr{
     display: block;
+} */
+
+a.active p{
+    color: #FBC108;
 }
 
 .PhoneInputInput:focus{

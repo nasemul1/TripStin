@@ -17,6 +17,7 @@ import About from './pages/About/About'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './components/Footer'
+import Addblog from './pages/AddBlog/Addblog'
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         {/* <Route path="/destinations" element={<Destinations />} /> */}
         {/* <Route path="/destinations/:id" element={<SingleDestination />} /> */}
         <Route path="/travel_blog" element={<TravelBlog />} />
+        <Route path="/addblog" element={<Addblog />} />
         <Route path="/travel_blog/:id" element={<SBlog />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/contact" element={<Contact />} />

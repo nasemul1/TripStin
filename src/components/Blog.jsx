@@ -12,12 +12,10 @@ const Blog = () => {
         const fetchDataForPosts = async () => {
             try {
                 const response = await fetch(URL);
-                console.log('Response:', response); // Log the raw response
                 if (!response.ok) {
                     throw new Error(`HTTP error: Status ${response.status}`);
                 }
                 const result = await response.json();
-                console.log('Fetched Data:', result); // Log the parsed data
                 setData(result);
             } catch (err) {
                 setError(err.message);

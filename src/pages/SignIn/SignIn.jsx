@@ -42,7 +42,7 @@ const SignIn = () => {
         const { token, user } = result;
         
         localStorage.setItem('authToken', token);
-        localStorage.setItem('userDetails', user);
+        localStorage.setItem('userDetails', JSON.stringify(user));
 
         toast("Login Sucessfull 🥳", {
           position: "bottom-right",
