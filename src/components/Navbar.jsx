@@ -27,7 +27,7 @@ const Navbar = ({rName}) => {
     }, [lastScrollY]);
 
   return (
-    <nav className={`px-5 sm:px-14 2xl:px-28 fixed top-0 z-50 w-screen bg-white shadow-md flex items-center justify-between py-5 font-medium transition-transform duration-300 ${
+    <nav className={`px-5 sm:px-14 lg:px-28 2xl:px-36 fixed top-0 z-50 w-screen bg-white shadow-md flex items-center justify-between py-5 font-medium transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}>
       <NavLink to="/">
@@ -36,10 +36,6 @@ const Navbar = ({rName}) => {
       <ul className="hidden sm:flex gap-5 text-[12px] lg:text-sm text-[#0C3358]">
         <NavLink to="/" className="flex flex-col items-center gap-1">
           <p>HOME</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-[#FBC108] hidden" />
-        </NavLink>
-        <NavLink to="/destinations" className="flex flex-col items-center gap-1">
-          <p>DESTINATIONS</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-[#FBC108] hidden" />
         </NavLink>
         <NavLink to="/travel_blog" className="flex flex-col items-center gap-1">
