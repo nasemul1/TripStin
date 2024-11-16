@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import side from '../../images/background/sunamganj.webp';
 import { toast } from 'react-toastify';
@@ -20,6 +20,13 @@ const SignUp = () => {
   }
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      navigate('/profile');
+    }
+  }, [navigate]);
 
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");

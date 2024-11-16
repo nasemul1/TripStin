@@ -65,7 +65,10 @@ const Home = () => {
             </div>
             <Strip />
             <Slider /> */}
-            <Blog />
+            <div className='mt-10 w-full flex flex-col items-center'>
+                <h2 className='mb-3 text-2xl sm:text-3xl text-gray-700 font-bold font-merienda'>Travel Blogs</h2>
+                <Blog />
+            </div>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import side from '../../images/background/sunamganj.webp';
 import { toast } from 'react-toastify';
@@ -13,6 +13,14 @@ const SignIn = () => {
   }
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      navigate('/profile');
+    }
+  }, [navigate]);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -42,6 +50,7 @@ const SignIn = () => {
         const { token, user } = result;
         
         localStorage.setItem('authToken', token);
+        window.dispatchEvent(new Event("storage"));
         localStorage.setItem('userDetails', JSON.stringify(user));
 
         toast("Login Sucessfull 🥳", {

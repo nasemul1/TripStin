@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react';
 import sajek from '../images/Blog/sajek.jpg'; // Using a placeholder image for all posts
 import { Link } from 'react-router-dom';
 
-const Blog = () => {
+const Blog = ({uname}) => {
     const URL = import.meta.env.VITE_API_DEMO_URL;
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
     useEffect(() => {
         const fetchDataForPosts = async () => {
             try {
@@ -25,14 +24,12 @@ const Blog = () => {
                 setLoading(false);
             }
         };
-    
+        
         fetchDataForPosts();
     }, [URL]);
 
     return (
-        <div className='mt-10 w-full flex flex-col items-center'>
-            <h2 className='mb-3 text-2xl sm:text-3xl text-gray-700 font-bold font-merienda'>Travel Blogs</h2>
-            {/* Loading and Error Messages */}
+        <div className='flex flex-col items-center'>
             {loading && <p>Loading...</p>}
             {error && <p className='text-red-500'>{error}</p>}
 

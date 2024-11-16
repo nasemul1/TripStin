@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { Divide as Hamburger } from 'hamburger-react';
 
 const Navbar = ({ rName }) => {
+  const navigate = useNavigate();
   const [isOpen, setOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -28,7 +29,24 @@ const Navbar = ({ rName }) => {
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     setLoggedIn(!!token);
+  
+    const handleStorageChange = () => {
+      const updatedToken = localStorage.getItem("authToken");
+      setLoggedIn(!!updatedToken);
+    };
+  
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
   }, []);
+
+  const handleClick = () => {
+    localStorage.removeItem('authToken');
+    window.dispatchEvent(new Event("storage"));
+    navigate('/');
+  }
 
   return (
     <nav
@@ -39,24 +57,24 @@ const Navbar = ({ rName }) => {
       <NavLink to="/">
         <img src={logo} className="w-24 md:w-28 lg:w-36" alt="logo" />
       </NavLink>
-      <ul className="hidden sm:flex items-center gap-5 text-[12px] lg:text-sm text-[#0C3358]">
-        <NavLink to="/" className="flex flex-col items-center gap-1">
+      <ul className="hidden sm:flex items-center gap-5 lg:text-sm text-[#0C3358]">
+        <NavLink to="/" className="flex flex-col items-center gap-1 text-[16px]">
           <p>Home</p>
         </NavLink>
-        <NavLink to="/travel_blog" className="flex flex-col items-center gap-1">
+        <NavLink to="/travel_blog" className="flex flex-col items-center gap-1 text-[16px]">
           <p>Travel Blog</p>
         </NavLink>
         {!loggedIn ? (
           <>
-            <NavLink to="/signin" className="flex flex-col items-center gap-1">
+            <NavLink to="/signin" className="flex flex-col items-center gap-1 text-[16px]">
               <p>Sign In</p>
             </NavLink>
-            <NavLink to="/signup" className="flex flex-col items-center gap-1">
+            <NavLink to="/signup" className="flex flex-col items-center gap-1 text-[16px]">
               <p>Sign Up</p>
             </NavLink>
           </>
         ) : (
-          <NavLink to="/profile" className="flex flex-col items-center gap-1">
+          <NavLink to="/profile" className="flex flex-col items-center gap-1 text-[16px]">
             <div className="flex items-center gap-x-2">
               <p>{data.name}</p>
               <div className="w-8 h-8 rounded-full bg-blog bg-cover border-2 border-blue-300"></div>
@@ -100,9 +118,12 @@ const Navbar = ({ rName }) => {
                 </NavLink>
               </div>
             ) : (
-              <NavLink to="/profile" className="hover:text-[#FBC108]">
-                Profile
-              </NavLink>
+              <>
+                <NavLink to="/profile" className="hover:text-[#FBC108]">
+                  Profile
+                </NavLink>
+                <button onClick={handleClick} className="hover:text-[#FBC108]">Logout</button>
+              </>
             )}
           </div>
         )}
