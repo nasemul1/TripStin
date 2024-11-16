@@ -15,6 +15,7 @@ const Profile = () => {
 
   const handleClick = () => {
     localStorage.removeItem('authToken');
+    localStorage.removeItem('userDetails');
     window.dispatchEvent(new Event("storage"));
     navigate('/');
   }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import side from '../../images/background/sunamganj.webp';
+import side from '../../images/destination/sunamganj.webp';
 import { toast } from 'react-toastify';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
@@ -85,8 +85,13 @@ const SignUp = () => {
     }
   };
   return (
-    <section className="mt-28 min-h-screen flex items-center justify-center">
-      <div className="flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
+    <section className="min-h-screen flex items-center justify-center">
+      <div className="flex rounded-2xl shadow-lg max-w-3xl p-5 items-center relative">
+        <Link to='/' className='absolute -top-5 sm:top-5 left-5 p-[6px]  border hover:border-red-400 rounded-full flex items-center justify-center group'>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 group-hover:text-red-400">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          </svg>
+        </Link>
         <div className="md:w-1/2 px-8 md:px-16">
           <h2 className="font-bold text-2xl">Welcome Back👋</h2>
           <p className="text-sm mt-2">Explore your next adventure with us - the journey begins now!</p>

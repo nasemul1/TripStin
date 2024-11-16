@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home/Home'
 import SignIn from './pages/SignIn/SignIn'
@@ -20,13 +20,16 @@ import Footer from './components/Footer'
 import Addblog from './pages/AddBlog/Addblog'
 
 const App = () => {
+  const location = useLocation();
+
+  const hideNavbarRoutes = ['/signin', '/signup'];
+  const shouldHideNavbar = hideNavbarRoutes.includes(location.pathname);
+
   return (
     <div className='w-screen text-poppins'>
-      <Navbar />
+      { !shouldHideNavbar && <Navbar /> }
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
         {/* <Route path="/destinations" element={<Destinations />} /> */}
         {/* <Route path="/destinations/:id" element={<SingleDestination />} /> */}
         <Route path="/travel_blog" element={<TravelBlog />} />
@@ -37,8 +40,10 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/policy" element={<Policy />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
-      <Footer />
+      {!shouldHideNavbar && <Footer />}
       <ToastContainer />
     </div>
   )
