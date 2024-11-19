@@ -28,21 +28,21 @@ const App = () => {
   return (
     <div className='w-screen text-poppins'>
       { !shouldHideNavbar && <Navbar /> }
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/destinations" element={<Destinations />} /> */}
-        {/* <Route path="/destinations/:id" element={<SingleDestination />} /> */}
-        <Route path="/travel_blog" element={<TravelBlog />} />
-        <Route path="/addblog" element={<Addblog />} />
-        <Route path="/travel_blog/:id" element={<SBlog />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/policy" element={<Policy />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/destinations" element={<Destinations />} /> */}
+          {/* <Route path="/destinations/:id" element={<SingleDestination />} /> */}
+          <Route path="/travel_blog" element={<TravelBlog />} />
+          <Route path="/addblog" element={<Addblog />} />
+          <Route path="/travel_blog/:id" element={<SBlog />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/policy" element={<Policy />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
       {!shouldHideNavbar && <Footer />}
       <ToastContainer />
     </div>

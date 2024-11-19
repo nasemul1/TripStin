@@ -38,10 +38,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      <div className='mt-6 w-full flex flex-col justify-center'>
-        <p className='text-lg text-center sm:text-2xl font-bold font-merienda'>My Blogs</p>
-        <Blog />
-      </div>
+      <Blog head="My Blogs"/>
       <button onClick={handleClick} className='px-6 py-2 bg-gray-950 text-white'>Logout</button>
     </div>
   )
