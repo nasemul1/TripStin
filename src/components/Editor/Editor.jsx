@@ -1,7 +1,7 @@
 import React from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-import "./quillStyles.css";
+import ReactQuill from 'react-quill-new';
+import 'react-quill-new/dist/quill.snow.css';
+import './quillStyles.css';
 
 const Editor = ({ value, setValue }) => {
   const handleChange = (content) => {
