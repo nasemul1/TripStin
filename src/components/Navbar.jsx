@@ -96,9 +96,9 @@ const Navbar = ({ rName }) => {
           <div className="absolute z-50 max-w-80 w-max right-0 p-7 rounded-md flex flex-col items-center gap-y-4 text-[#073258] font-semibold bg-white shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]">
             <p className="font-pacifico text-xl">"Say Yes to new adventures"</p>
             <hr className="w-full border-2 border-[#073258]" />
-            <NavLink to="/destinations" className="hover:text-[#FBC108]">
+            {/* <NavLink to="/destinations" className="hover:text-[#FBC108]">
               Destinations
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/travel_blog" className="hover:text-[#FBC108]">
               Travel Blogs
             </NavLink>

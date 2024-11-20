@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <footer className='mt-10 p-10 w-full bg-black grid grid-cols-12 text-white'>
+    <footer className='mt-10 p-10 w-full bg-black grid grid-cols-12 text-white '>
         <div className='col-span-7 sm:col-span-5 text-[12px] sm:text-[16px]'>
             <img src={logoW} alt="logo" className='w-28'/>
             <p className='mt-1 text-[10px] font-medium'>Exploring Made Easy</p>

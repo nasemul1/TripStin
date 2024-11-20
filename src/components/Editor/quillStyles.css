@@ -1,0 +1,20 @@
+.ql-toolbar {
+  background-color: sky;
+  padding: 0.5rem;
+}
+
+.ql-toolbar button {
+  color: #374151;
+}
+
+.ql-toolbar button:hover {
+  background-color: #e5e7eb;
+}
+
+.ql-container{
+  height: 200px;
+}
+
+.ql-editor {
+  padding: 1rem;
+}

@@ -32,8 +32,8 @@ const Profile = () => {
               <h2 className='text-xs 2xl:text-lg'>@{data.username}</h2>
             </div>
             <div className='flex gap-2'>
-              <Link to='/addblog' className='px-3 py-2 bg-blue-600 hover:bg-blue-500 duration-300 text-[9px] sm:text-sm  text-white font-semibold rounded-md flex items-center'>Add Blog</Link>
-              <Link to='/profile' className='px-3 py-2 border-2 border-red-500 hover:bg-red-500 text-[9px] sm:text-sm hover:text-white duration-300 text-red-500 font-semibold rounded-md flex items-center'>Profile Info</Link>
+              <Link to='/addblog' className='px-4 py-1 sm:py-2 bg-slate-900 hover:bg-slate-800 duration-300 text-[9px] sm:text-sm  text-white font-semibold rounded flex items-center'>Add Blog</Link>
+              <Link to='/profile' className='px-3 py-1 sm:py-2 border-2 border-red-500 hover:bg-red-500 text-[9px] sm:text-sm hover:text-white duration-300 text-red-500 font-semibold rounded flex items-center'>Profile Info</Link>
             </div>
           </div>
         </div>

@@ -16,7 +16,10 @@ export default {
         'hero-img': "url('./src/images/components-img/hero.webp')",
         'blog': "url('./src/images/category-section/blog.webp')",
         'destination': "url('./src/images/category-section/destination.webp')",
-      }
+      },
+      colors: {
+        quillBg: "#f9f9f9", // Example color
+      },
     },
   },
   plugins: [],
