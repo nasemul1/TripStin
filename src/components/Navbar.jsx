@@ -50,14 +50,14 @@ const Navbar = ({ rName }) => {
 
   return (
     <nav
-      className={`px-5 sm:px-14 lg:px-28 2xl:px-36 fixed top-0 z-50 w-screen bg-white shadow-md flex items-center justify-between py-5 text-md font-semibold transition-transform duration-300 ${
+      className={`px-5 sm:px-14 lg:px-28 2xl:px-36 fixed top-0 z-50 w-screen bg-white shadow-md flex items-center justify-between py-5 text-md font-medium transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
       <NavLink to="/">
-        <img src={logo} className="w-24 md:w-28 lg:w-36" alt="logo" />
+        <img src={logo} className="w-24 md:w-28 2xl:w-36" alt="logo" />
       </NavLink>
-      <ul className="hidden sm:flex items-center gap-5 lg:text-sm text-[#0C3358]">
+      <ul className="hidden sm:flex items-center gap-5 lg:text-sm text-slate-900">
         <NavLink to="/" className="flex flex-col items-center gap-1 text-[16px]">
           <p>Home</p>
         </NavLink>

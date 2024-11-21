@@ -18,6 +18,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './components/Footer'
 import Addblog from './pages/AddBlog/Addblog'
+import ProfileInfo from './pages/Profile/ProfileInfo'
 
 const App = () => {
   const location = useLocation();
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/addblog" element={<Addblog />} />
           <Route path="/travel_blog/:id" element={<SBlog />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/profile_info" element={<ProfileInfo />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/policy" element={<Policy />} />
