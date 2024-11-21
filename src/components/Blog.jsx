@@ -35,7 +35,7 @@ const Blog = ({head}) => {
                 {loading && <p>Loading...</p>}
                 {error && <p className='text-red-500'>{error}</p>}
 
-                <div id='data-here' className='w-full flex flex-wrap justify-center sm:justify-between sm:gap-x-4 xl:gap-x-8'>
+                <div id='data-here' className='w-full flex flex-wrap justify-center sm:justify-around lg:justify-between sm:gap-x-4 xl:gap-x-8'>
                     {Array.isArray(data) && data.length > 0 ? (
                         data.slice(0, 9).map((post) => (
                             <Link
