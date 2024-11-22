@@ -56,7 +56,8 @@ const SignUp = () => {
     
           if (!response.ok) {
             const errorData = await response.json();
-            toast.error("Sign In Failed 😕", {
+
+            toast.error(errorData.message, {
               position: "bottom-right",
             });
           }

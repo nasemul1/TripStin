@@ -1,5 +1,8 @@
 import React from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Navbar from './components/Navbar'
 import Home from './pages/Home/Home'
 import SignIn from './pages/SignIn/SignIn'
@@ -13,12 +16,10 @@ import NotFound from './pages/NotFound/NotFound'
 import SBlog from './pages/Blog/SBLog'
 import Policy from './pages/Policy/Policy'
 import About from './pages/About/About'
-
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import Footer from './components/Footer'
 import Addblog from './pages/AddBlog/Addblog'
 import ProfileInfo from './pages/Profile/ProfileInfo'
+import VerifyEmail from './pages/EmailVerify/VerifyEmail';
 
 const App = () => {
   const location = useLocation();
@@ -41,9 +42,10 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/policy" element={<Policy />} />
-          <Route path="*" element={<NotFound />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/verify-email/:id/:hash" element={<VerifyEmail />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       {!shouldHideNavbar && <Footer />}
       <ToastContainer />
