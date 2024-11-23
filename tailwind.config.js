@@ -18,7 +18,7 @@ export default {
         'destination': "url('./src/images/category-section/destination.webp')",
       },
       colors: {
-        quillBg: "#f9f9f9", // Example color
+        quillBg: "#f9f9f9",
       },
     },
   },

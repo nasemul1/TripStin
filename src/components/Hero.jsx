@@ -1,12 +1,14 @@
 import React from 'react'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import hero from '../images/components-img/hero.webp';
 
 const Hero = () => {
   return (
     <div className='w-full h-52 sm:h-72 lg:h-[360px] flex justify-center relative'>
-        <div className='bg-hero-img bg-cover rounded-xl w-full h-full'>
-            <h1 className='w-full h-full text-white text-xl sm:text-2xl lg:text-3xl font-bold flex items-center justify-center'>Exploring Made Easy</h1>
+        <div className='w-full h-full relative rounded-xl overflow-hidden group'>
+            <img src={hero} alt="hero image" className='group-hover:scale-110 duration-1000 transform' />
+            <h1 className='absolute top-1/2 left-1/2 transform translate-x-[-50%] translate-y-[-50%] text-white text-xl sm:text-2xl lg:text-3xl font-bold'>Exploring Made Easy</h1>
         </div>
         {/* <div className='mx-auto w-[70%] sm:w-[80%] md:w-[90%] absolute top-[80%] z-40 rounded-lg overflow-hidden'>
             <Splide 
