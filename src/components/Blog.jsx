@@ -275,8 +275,8 @@ const Blog = ({head}) => {
         <div className='mt-10 w-full flex flex-col items-center'>
             <h2 className='mb-3 text-2xl sm:text-3xl text-gray-700 font-bold font-merienda'>{head}</h2>
             <div className='flex flex-col items-center'>
-                {loading && <p>Loading...</p>}
-                {error && <p className='text-red-500'>{error}</p>}
+                {/* {loading && <p>Loading...</p>} */}
+                {/* {error && <p className='text-red-500'>{error}</p>} */}
 
                 <div id='data-here' className='w-full flex flex-wrap justify-center sm:justify-around xl:justify-between sm:gap-x-4 xl:gap-x-8'>
                     {Array.isArray(data) && data.length > 0 ? (

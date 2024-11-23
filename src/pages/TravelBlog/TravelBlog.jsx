@@ -273,7 +273,7 @@ const TravelBlog = () => {
         <div className='mt-28 w-full flex flex-col items-center'>
             <h2 className='mb-4 text-2xl sm:text-3xl text-gray-700 font-bold font-merienda'>Travel Blogs</h2>
             {/* Loading and Error Messages */}
-            {loading && <p>Loading...</p>}
+            {/* {loading && <p>Loading...</p>} */}
             {error && <p className='text-red-500'>{error}</p>}
 
             <div id='data-here' className='w-full flex flex-wrap justify-center'>
