@@ -19,12 +19,12 @@ import About from './pages/About/About'
 import Footer from './components/Footer'
 import Addblog from './pages/AddBlog/Addblog'
 import ProfileInfo from './pages/Profile/ProfileInfo'
-import VerifyEmail from './pages/EmailVerify/VerifyEmail';
+import RedirectPage from './pages/EmailVerify/RedirectPage';
 
 const App = () => {
   const location = useLocation();
 
-  const hideNavbarRoutes = ['/signin', '/signup'];
+  const hideNavbarRoutes = ['/signin', '/signup', '/redirect'];
   const shouldHideNavbar = hideNavbarRoutes.includes(location.pathname);
 
   return (
@@ -44,7 +44,7 @@ const App = () => {
           <Route path="/policy" element={<Policy />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/verify-email/:id/:hash" element={<VerifyEmail />} />
+          <Route path="/redirect" element={<RedirectPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       {!shouldHideNavbar && <Footer />}

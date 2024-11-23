@@ -4,29 +4,270 @@ import { Link } from 'react-router-dom';
 
 const TravelBlog = () => {
     const URL = import.meta.env.VITE_API_DEMO_URL;
-    const [data, setData] = useState([]);
+    // const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    useEffect(() => {
-        const fetchDataForPosts = async () => {
-            try {
-                const response = await fetch(URL);
-                if (!response.ok) {
-                    throw new Error(`HTTP error: Status ${response.status}`);
-                }
-                const result = await response.json();
-                setData(result);
-            } catch (err) {
-                setError(err.message);
-                setData([]);
-            } finally {
-                setLoading(false);
-            }
-        };
+
+
+    const data = [
+        {
+            "id": 1,
+            "title": "কক্সবাজার জেলার দর্শনীয় স্থান",
+            "image": "../images/Blog/sajek.jpg",
+            "content": "রামু বৌদ্ধ মন্দির: ইতিহাস, সংস্কৃতি ও আধ্যাত্মিকতার মিলনস্থল কক্সবাজারের রামু উপজেলায় অবস্থিত রামু বৌদ্ধ মন্দির বাংলাদেশে বৌদ্ধ সংস্কৃতির এক অমূল্য নিদর্শন। এটি শুধু একটি ধর্মীয় স্থাপনা নয়, বরং ইতিহাস, শিল্পকলা এবং শান্তির এক অসাধারণ প্রতীক। সবুজ পাহাড়ের মাঝে এই মন্দির যেন প্রকৃতির গায়ে আঁকা এক মনোমুগ্ধকর চিত্রকর্ম। এখানে এসে আপনি যেমন ধর্মীয় আচার-অনুষ্ঠানের সান্নিধ্য পাবেন, তেমনই পাবেন প্রকৃতির বিশুদ্ধতার ছোঁয়া। মন্দিরের আকর্ষণ ১. বিশালাকার বুদ্ধ মূর্তি রামুর প্রধান আকর্ষণ হলো এখানকার বিশালাকার শায়িত বুদ্ধ মূর্তি। ১০০ ফুট লম্বা এই মূর্তি দেখে আপনার মনে হবে, বুদ্ধ নিজেই যেন এখানে বিশ্রাম নিচ্ছেন। এটি বাংলাদেশের সবচেয়ে বড় বুদ্ধ মূর্তিগুলোর একটি এবং এটি দেখতে হাজার হাজার পর্যটক এখানে আসেন। বুদ্ধের মূর্তির সামনাসামনি দাঁড়িয়ে এক ধরনের আধ্যাত্মিক প্রশান্তি অনুভব করবেন। ২. প্রাচীন বৌদ্ধ স্থাপত্য ও চিত্রকর্ম রামুর বৌদ্ধ মন্দিরের ভেতরে ও বাইরে প্রাচীন বৌদ্ধ স্থাপত্য এবং চিত্রকর্ম দেখতে পারবেন। মন্দিরের দেয়ালে খোদাই করা বিভিন্ন চিত্রকর্ম বুদ্ধের জীবন ও শিক্ষার উপর ভিত্তি করে তৈরি। এখানকার কারুকার্য আপনাকে মুগ্ধ করবে এবং প্রতিটি কোণেই আপনি খুঁজে পাবেন শিল্প ও আধ্যাত্মিকতার মিলন। ৩. বুদ্ধপূর্নিমা ও ধর্মীয় অনুষ্ঠান বছরের বিভিন্ন সময়ে এখানে ধর্মীয় উৎসব পালন করা হয়, বিশেষ করে বুদ্ধপূর্নিমা এখানে অত্যন্ত উৎসাহের সাথে উদযাপিত হয়। এই সময় মন্দির প্রাঙ্গণ সজ্জিত হয় বর্ণিল আলোকসজ্জায়, এবং স্থানীয়রা ধর্মীয় আচার-অনুষ্ঠানে অংশগ্রহণ করে। এতে অংশ নিয়ে আপনি বৌদ্ধ ধর্মের সংস্কৃতি ও আচার সম্পর্কে জানতে পারবেন। কেন রামু বৌদ্ধ মন্দিরে যাবেন? যদি আপনি ধর্ম, সংস্কৃতি এবং ইতিহাসের এক অনন্য মেলবন্ধন দেখতে চান, তাহলে রামু বৌদ্ধ মন্দির আপনার জন্য উপযুক্ত গন্তব্য। এখানে এসে আপনি শুধু ইতিহাসের অংশ হবেন না, বরং আধ্যাত্মিক প্রশান্তিরও অভিজ্ঞতা পাবেন। সবুজ পাহাড়ের মাঝে এই শান্তির স্থানে এসে মনে হবে, “এখানে এলে মনটা কতটা হালকা হয়ে যায়!” রামু বৌদ্ধ মন্দির, কক্সবাজার যাওয়ার উপায় রামু বৌদ্ধ মন্দির কক্সবাজার জেলার রামু উপজেলায় অবস্থিত, যা বাংলাদেশের অন্যতম গুরুত্বপূর্ণ বৌদ্ধ ধর্মীয় স্থান। এখানে বিশাল বুদ্ধের মূর্তি এবং দৃষ্টিনন্দন বৌদ্ধ স্থাপত্য রয়েছে। রামুতে এসে বৌদ্ধ সংস্কৃতির নানা নিদর্শন",
+            "user": {
+                "id": 0,
+                "name": "test",
+                "email": "test@gmail.com",
+                "username": "test_123",
+                "phone": "+88012344545",
+                "email_verified_at": "2019-08-24T14:15:22Z",
+                "created_at": "2019-08-24T14:15:22Z",
+                "updated_at": "2019-08-24T14:15:22Z"
+            },
+            "is_published": 0,
+            "is_featured": 0
+        },
+        {
+            "id": 2,
+            "title": "How to visit Sajek Valley in Rangamati",
+            "image": "../images/Blog/sajek.jpg",
+            "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis modi itaque natus. Unde error molestias soluta, at obcaecati impedit eius!",
+            "user": {
+                "id": 0,
+                "name": "test",
+                "email": "test@gmail.com",
+                "username": "test_123",
+                "phone": "+88012344545",
+                "email_verified_at": "2019-08-24T14:15:22Z",
+                "created_at": "2019-08-24T14:15:22Z",
+                "updated_at": "2019-08-24T14:15:22Z"
+            },
+            "is_published": 0,
+            "is_featured": 0
+        },
+        {
+            "id": 3,
+            "title": "How to visit Sajek Valley in Rangamati",
+            "image": "../images/Blog/sajek.jpg",
+            "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis modi itaque natus. Unde error molestias soluta, at obcaecati impedit eius!",
+            "user": {
+                "id": 0,
+                "name": "test",
+                "email": "test@gmail.com",
+                "username": "test_123",
+                "phone": "+88012344545",
+                "email_verified_at": "2019-08-24T14:15:22Z",
+                "created_at": "2019-08-24T14:15:22Z",
+                "updated_at": "2019-08-24T14:15:22Z"
+            },
+            "is_published": 0,
+            "is_featured": 0
+        },
+        {
+            "id": 4,
+            "title": "How to visit Sajek Valley in Rangamati",
+            "image": "../images/Blog/sajek.jpg",
+            "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis modi itaque natus. Unde error molestias soluta, at obcaecati impedit eius!",
+            "user": {
+                "id": 0,
+                "name": "test",
+                "email": "test@gmail.com",
+                "username": "test_123",
+                "phone": "+88012344545",
+                "email_verified_at": "2019-08-24T14:15:22Z",
+                "created_at": "2019-08-24T14:15:22Z",
+                "updated_at": "2019-08-24T14:15:22Z"
+            },
+            "is_published": 0,
+            "is_featured": 0
+        },
+        {
+            "id": 5,
+            "title": "How to visit Sajek Valley in Rangamati",
+            "image": "../images/Blog/sajek.jpg",
+            "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis modi itaque natus. Unde error molestias soluta, at obcaecati impedit eius!",
+            "user": {
+                "id": 0,
+                "name": "test",
+                "email": "test@gmail.com",
+                "username": "test_123",
+                "phone": "+88012344545",
+                "email_verified_at": "2019-08-24T14:15:22Z",
+                "created_at": "2019-08-24T14:15:22Z",
+                "updated_at": "2019-08-24T14:15:22Z"
+            },
+            "is_published": 0,
+            "is_featured": 0
+        },
+        {
+            "id": 6,
+            "title": "How to visit Sajek Valley in Rangamati",
+            "image": "../images/Blog/sajek.jpg",
+            "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis modi itaque natus. Unde error molestias soluta, at obcaecati impedit eius!",
+            "user": {
+                "id": 0,
+                "name": "test",
+                "email": "test@gmail.com",
+                "username": "test_123",
+                "phone": "+88012344545",
+                "email_verified_at": "2019-08-24T14:15:22Z",
+                "created_at": "2019-08-24T14:15:22Z",
+                "updated_at": "2019-08-24T14:15:22Z"
+            },
+            "is_published": 0,
+            "is_featured": 0
+        },
+        {
+            "id": 7,
+            "title": "How to visit Sajek Valley in Rangamati",
+            "image": "../images/Blog/sajek.jpg",
+            "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis modi itaque natus. Unde error molestias soluta, at obcaecati impedit eius!",
+            "user": {
+                "id": 0,
+                "name": "test",
+                "email": "test@gmail.com",
+                "username": "test_123",
+                "phone": "+88012344545",
+                "email_verified_at": "2019-08-24T14:15:22Z",
+                "created_at": "2019-08-24T14:15:22Z",
+                "updated_at": "2019-08-24T14:15:22Z"
+            },
+            "is_published": 0,
+            "is_featured": 0
+        },
+        {
+            "id": 8,
+            "title": "How to visit Sajek Valley in Rangamati",
+            "image": "../images/Blog/sajek.jpg",
+            "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis modi itaque natus. Unde error molestias soluta, at obcaecati impedit eius!",
+            "user": {
+                "id": 0,
+                "name": "test",
+                "email": "test@gmail.com",
+                "username": "test_123",
+                "phone": "+88012344545",
+                "email_verified_at": "2019-08-24T14:15:22Z",
+                "created_at": "2019-08-24T14:15:22Z",
+                "updated_at": "2019-08-24T14:15:22Z"
+            },
+            "is_published": 0,
+            "is_featured": 0
+        },
+        {
+            "id": 9,
+            "title": "How to visit Sajek Valley in Rangamati",
+            "image": "../images/Blog/sajek.jpg",
+            "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis modi itaque natus. Unde error molestias soluta, at obcaecati impedit eius!",
+            "user": {
+                "id": 0,
+                "name": "test",
+                "email": "test@gmail.com",
+                "username": "test_123",
+                "phone": "+88012344545",
+                "email_verified_at": "2019-08-24T14:15:22Z",
+                "created_at": "2019-08-24T14:15:22Z",
+                "updated_at": "2019-08-24T14:15:22Z"
+            },
+            "is_published": 0,
+            "is_featured": 0
+        },
+        {
+            "id": 10,
+            "title": "How to visit Sajek Valley in Rangamati",
+            "image": "../images/Blog/sajek.jpg",
+            "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis modi itaque natus. Unde error molestias soluta, at obcaecati impedit eius!",
+            "user": {
+                "id": 0,
+                "name": "test",
+                "email": "test@gmail.com",
+                "username": "test_123",
+                "phone": "+88012344545",
+                "email_verified_at": "2019-08-24T14:15:22Z",
+                "created_at": "2019-08-24T14:15:22Z",
+                "updated_at": "2019-08-24T14:15:22Z"
+            },
+            "is_published": 0,
+            "is_featured": 0
+        },
+        {
+            "id":11,
+            "title": "How to visit Sajek Valley in Rangamati",
+            "image": "../images/Blog/sajek.jpg",
+            "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis modi itaque natus. Unde error molestias soluta, at obcaecati impedit eius!",
+            "user": {
+                "id": 0,
+                "name": "test",
+                "email": "test@gmail.com",
+                "username": "test_123",
+                "phone": "+88012344545",
+                "email_verified_at": "2019-08-24T14:15:22Z",
+                "created_at": "2019-08-24T14:15:22Z",
+                "updated_at": "2019-08-24T14:15:22Z"
+            },
+            "is_published": 0,
+            "is_featured": 0
+        },
+        {
+            "id": 12,
+            "title": "How to visit Sajek Valley in Rangamati",
+            "image": "../images/Blog/sajek.jpg",
+            "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis modi itaque natus. Unde error molestias soluta, at obcaecati impedit eius!",
+            "user": {
+                "id": 0,
+                "name": "test",
+                "email": "test@gmail.com",
+                "username": "test_123",
+                "phone": "+88012344545",
+                "email_verified_at": "2019-08-24T14:15:22Z",
+                "created_at": "2019-08-24T14:15:22Z",
+                "updated_at": "2019-08-24T14:15:22Z"
+            },
+            "is_published": 0,
+            "is_featured": 0
+        },
+        {
+            "id": 13,
+            "title": "How to visit Sajek Valley in Rangamati",
+            "image": "../images/Blog/sajek.jpg",
+            "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis modi itaque natus. Unde error molestias soluta, at obcaecati impedit eius!",
+            "user": {
+                "id": 0,
+                "name": "test",
+                "email": "test@gmail.com",
+                "username": "test_123",
+                "phone": "+88012344545",
+                "email_verified_at": "2019-08-24T14:15:22Z",
+                "created_at": "2019-08-24T14:15:22Z",
+                "updated_at": "2019-08-24T14:15:22Z"
+            },
+            "is_published": 0,
+            "is_featured": 0
+        }
+    ];
+
+
+
+    // useEffect(() => {
+    //     const fetchDataForPosts = async () => {
+    //         try {
+    //             const response = await fetch(URL);
+    //             if (!response.ok) {
+    //                 throw new Error(`HTTP error: Status ${response.status}`);
+    //             }
+    //             const result = await response.json();
+    //             setData(result);
+    //         } catch (err) {
+    //             setError(err.message);
+    //             setData([]);
+    //         } finally {
+    //             setLoading(false);
+    //         }
+    //     };
     
-        fetchDataForPosts();
-    }, [URL]);
+    //     fetchDataForPosts();
+    // }, [URL]);
 
     return (
         <div className='mt-28 w-full flex flex-col items-center'>
