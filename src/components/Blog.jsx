@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import sajek from '../images/Blog/sajek.jpg';
 import { Link } from 'react-router-dom';
 
-const Blog = ({head}) => {
+const Blog = ({head, limit}) => {
     const URL = import.meta.env.VITE_API_DEMO_URL;
     // const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -218,7 +218,7 @@ const Blog = ({head}) => {
     // }, [URL]);
 
     return (
-        <div class="container mx-auto mt-10 p-4">
+        <div class="container mx-auto my-10 p-4">
             <div className="mb-7 w-full flex items-center gap-x-5">
                 <div className="flex-grow h-[2px] bg-gradient-to-l from-gray-300"></div>
                 <h2 className="text-2xl sm:text-3xl text-gray-700 font-bold font-merienda">{head}</h2>
@@ -226,7 +226,7 @@ const Blog = ({head}) => {
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {Array.isArray(data) && data.length > 0 ? (
-                    data.slice(0,8).map((post)=>(
+                    data.slice(0, (limit===-1)?20:limit).map((post)=>(
                         <div id='card' key={post.id} class="bg-white rounded-lg border p-4 group">
                             <div className='overflow-hidden rounded-md'><img src={sajek} alt="Placeholder Image" class="w-full h-48 object-cover group-hover:scale-125 duration-1000" /></div>
                             <div class="px-1 py-4 font-noto">
@@ -242,11 +242,11 @@ const Blog = ({head}) => {
                     !loading && <p className='text-gray-500'>No posts available</p>
                 )}
             </div>
-            <div className='my-8 w-full flex justify-center'>
+            {(limit!==-1) &&  <div className='mt-8 w-full flex justify-center'>
                 <Link to='/travel_blog' className='px-8 py-3 rounded bg-black hover:bg-slate-800 text-sm text-white font-md'>
                     See More
                 </Link>
-            </div>
+            </div>}
         </div>
     );
 };
