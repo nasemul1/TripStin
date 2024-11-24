@@ -73,7 +73,7 @@ const Addblog = () => {
             <Editor value={content} setValue={setContent} />
           </div>
           <div className='flex gap-x-3'>
-            <button type="submit" className='px-3 py-1 sm:px-4 sm:py-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded'>Create</button>
+            <button type="submit" className='px-3 py-1 sm:px-4 sm:py-2 border-2 border-slate-900 hover:bg-slate-900 text-slate-900 hover:text-white duration-300 font-semibold rounded'>Create</button>
             <Link to='/profile' className='px-3 py-1 sm:px-4 sm:py-2 border-2 border-red-500 hover:bg-red-500 text-red-500 hover:text-white duration-300 font-semibold rounded'>Back</Link>
           </div>
       </form>

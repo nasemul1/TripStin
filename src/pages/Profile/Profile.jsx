@@ -28,14 +28,14 @@ const Profile = () => {
               <h2 className='text-xs 2xl:text-lg text-slate-900'>@{data.username}</h2>
             </div>
             <div className='flex gap-2'>
-              <Link to='/addblog' className='px-4 py-1 sm:py-2 bg-slate-900 hover:bg-slate-800 duration-300 text-[9px] sm:text-sm  text-white font-semibold rounded flex items-center'>Add Blog</Link>
+              <Link to='/addblog' className='px-3 py-1 sm:py-2 border-2 border-slate-900 hover:bg-slate-900 text-[9px] sm:text-sm hover:text-white duration-300 text-slate-900 font-semibold rounded flex items-center'>Add Blog</Link>
               <Link to='/profile_info' className='px-3 py-1 sm:py-2 border-2 border-red-500 hover:bg-red-500 text-[9px] sm:text-sm hover:text-white duration-300 text-red-500 font-semibold rounded flex items-center'>Profile Info</Link>
             </div>
           </div>
         </div>
       </div>
       {veri && <p className='mt-4 p-2 w-full bg-red-500 rounded text-center text-white'>We have sent an email. Please verify your email first.</p>}
-      <div className='min-h-[420px]'><Blog head="My Blogs"/></div>
+      <div className='min-h-[420px]'><Blog head="My Blogs" limit={-1}/></div>
     </div>
   )
 }

@@ -243,7 +243,7 @@ const Blog = ({head, limit}) => {
                 )}
             </div>
             {(limit!==-1) &&  <div className='mt-8 w-full flex justify-center'>
-                <Link to='/travel_blog' className='px-8 py-3 rounded bg-black hover:bg-slate-800 text-sm text-white font-md'>
+                <Link to='/travel_blog' className='px-8 py-2 rounded border-2 border-slate-900 hover:bg-slate-900 hover:text-white duration-200 font-semibold'>
                     See More
                 </Link>
             </div>}
