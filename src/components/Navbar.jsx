@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
-import { Divide as Hamburger } from 'hamburger-react';
+import { Divide as Hamburger } from "hamburger-react";
 
 const Navbar = ({ rName }) => {
   const navigate = useNavigate();
@@ -9,15 +9,16 @@ const Navbar = ({ rName }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [loggedIn, setLoggedIn] = useState(false);
-  const data = JSON.parse(localStorage.getItem('userDetails'));
+  const data = JSON.parse(localStorage.getItem("userDetails"));
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropdown((prev) => !prev);
+  };
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
-    if (currentScrollY > lastScrollY && currentScrollY > 100) {
-      setIsVisible(false);
-    } else {
-      setIsVisible(true);
-    }
+    setIsVisible(currentScrollY <= lastScrollY || currentScrollY <= 100);
     setLastScrollY(currentScrollY);
   };
 
@@ -29,12 +30,12 @@ const Navbar = ({ rName }) => {
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     setLoggedIn(!!token);
-  
+
     const handleStorageChange = () => {
       const updatedToken = localStorage.getItem("authToken");
       setLoggedIn(!!updatedToken);
     };
-  
+
     window.addEventListener("storage", handleStorageChange);
 
     return () => {
@@ -42,46 +43,101 @@ const Navbar = ({ rName }) => {
     };
   }, []);
 
-  const handleClick = () => {
-    localStorage.removeItem('authToken');
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
     window.dispatchEvent(new Event("storage"));
-    navigate('/');
-  }
+    navigate("/");
+  };
 
   return (
     <nav
-      className={`px-5 sm:px-14 lg:px-28 2xl:px-36 fixed top-0 z-50 w-screen bg-white shadow-md flex items-center justify-between py-5 text-md font-medium transition-transform duration-300 ${
+      className={`px-5 sm:px-14 lg:px-28 2xl:px-36 fixed top-0 z-50 w-screen bg-white shadow-md flex items-center justify-between py-5 font-poppins font-medium transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
+      {/* Logo */}
       <NavLink to="/">
         <img src={logo} className="w-24 md:w-28 2xl:w-36" alt="logo" />
       </NavLink>
-      <ul className="hidden sm:flex items-center gap-5 lg:text-sm text-slate-900">
-        <NavLink to="/" className="flex flex-col items-center gap-1 text-[16px]">
-          <p>Home</p>
+
+      {/* Desktop Menu */}
+      <ul className="hidden sm:flex items-center gap-5 text-sm text-slate-900">
+        <NavLink to="/" className="flex flex-col items-center gap-1">
+          <p className="px-2 py-1 rounded-md hover:bg-slate-50">Home</p>
         </NavLink>
-        <NavLink to="/travel_blog" className="flex flex-col items-center gap-1 text-[16px]">
-          <p>Travel Blog</p>
-        </NavLink>
+
+        {/* Travel Blog with Dropdown */}
+        <div className="relative">
+          <NavLink
+            to='/travel_blog'
+            onClick={toggleDropdown}
+            className="flex flex-col items-center gap-1 focus:outline-none"
+          >
+            <p className="px-2 py-1 rounded-md flex items-center gap-x-1 hover:bg-slate-50">
+              Travel Blog
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </p>
+          </NavLink>
+          {showDropdown && (
+            <ul className="absolute top-full left-0 bg-white shadow-md overflow-hidden rounded-md mt-2 text-slate-900">
+              <li>
+                <NavLink
+                  className="block px-4 py-2 hover:bg-slate-100"
+                  onClick={() => setShowDropdown(false)}
+                >
+                  Destinations
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="block px-4 py-2 hover:bg-slate-100"
+                  onClick={() => setShowDropdown(false)}
+                >
+                  Categories
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="block px-4 py-2 hover:bg-slate-100"
+                  onClick={() => setShowDropdown(false)}
+                >
+                  Top Blogs
+                </NavLink>
+              </li>
+            </ul>
+          )}
+        </div>
+
         {!loggedIn ? (
           <>
-            <NavLink to="/signin" className="flex flex-col items-center gap-1 text-[16px]">
-              <p>Sign In</p>
+            <NavLink to="/signin" className="flex flex-col items-center gap-1">
+              <p className="px-2 py-1 rounded-md hover:bg-slate-50">Sign In</p>
             </NavLink>
-            <NavLink to="/signup" className="flex flex-col items-center gap-1 text-[16px]">
-              <p>Sign Up</p>
+            <NavLink to="/signup" className="flex flex-col items-center gap-1">
+              <p className="px-2 py-1 rounded-md hover:bg-slate-50">Sign Up</p>
             </NavLink>
           </>
         ) : (
-          <NavLink to="/profile" className="flex flex-col items-center gap-1 text-[16px]">
-            <div className="flex items-center gap-x-2">
-              <p>{data.name}</p>
-              <div className="w-8 h-8 rounded-full bg-blog bg-cover border-2 border-blue-300"></div>
-            </div>
-          </NavLink>
+          <div className="flex items-center gap-4">
+            <NavLink to="/profile" className="flex flex-col items-center gap-1">
+              <div className="flex items-center gap-x-2">
+                <p>{data.name}</p>
+                <div className="w-8 h-8 rounded-full bg-blog bg-cover border-2 border-blue-300"></div>
+              </div>
+            </NavLink>
+            <button
+              onClick={handleLogout}
+              className="px-2 py-1 rounded-md hover:bg-slate-50 text-red-600"
+            >
+              Logout
+            </button>
+          </div>
         )}
       </ul>
+
+      {/* Mobile Menu */}
       <div className="sm:hidden relative">
         <div className="scale-[0.60] md:scale-75 px-[2px] border-2 md:border-4 border-[#073258] rounded">
           <Hamburger
@@ -93,15 +149,21 @@ const Navbar = ({ rName }) => {
           />
         </div>
         {isOpen && (
-          <div className="absolute z-50 max-w-80 w-max right-0 p-7 rounded-md flex flex-col items-center gap-y-4 text-[#073258] font-semibold bg-white shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]">
+          <div className="absolute z-50 max-w-80 w-max right-0 p-7 rounded-md flex flex-col items-center gap-y-4 text-[#073258] font-semibold bg-white shadow-md">
             <p className="font-pacifico text-xl">"Say Yes to new adventures"</p>
             <hr className="w-full border-2 border-[#073258]" />
-            {/* <NavLink to="/destinations" className="hover:text-[#FBC108]">
-              Destinations
-            </NavLink> */}
-            <NavLink to="/travel_blog" className="hover:text-[#FBC108]">
-              Travel Blogs
+            <NavLink to="/" onClick={() => setOpen(false)}>
+              Home
             </NavLink>
+            <div className="relative">
+              <NavLink
+                to="/travel_blog"
+                className="hover:text-[#FBC108]"
+                onClick={() => setOpen(false)}
+              >
+                Travel Blog
+              </NavLink>
+            </div>
             {!loggedIn ? (
               <div className="pt-2 flex gap-x-4 items-center">
                 <NavLink
@@ -122,7 +184,12 @@ const Navbar = ({ rName }) => {
                 <NavLink to="/profile" className="hover:text-[#FBC108]">
                   Profile
                 </NavLink>
-                <button onClick={handleClick} className="hover:text-[#FBC108]">Logout</button>
+                <button
+                  onClick={handleLogout}
+                  className="hover:text-[#FBC108]"
+                >
+                  Logout
+                </button>
               </>
             )}
           </div>
@@ -133,4 +200,3 @@ const Navbar = ({ rName }) => {
 };
 
 export default Navbar;
-
