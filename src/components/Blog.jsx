@@ -224,17 +224,17 @@ const Blog = ({head, limit}) => {
                 <h2 className="text-2xl sm:text-3xl text-gray-700 font-bold font-merienda">{head}</h2>
                 <div className="flex-grow h-[2px] bg-gradient-to-r from-gray-300"></div>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {Array.isArray(data) && data.length > 0 ? (
                     data.slice(0, (limit===-1)?20:limit).map((post)=>(
-                        <div id='card' key={post.id} class="bg-white rounded-lg border p-4 group">
-                            <div className='overflow-hidden rounded-md'><img src={sajek} alt="Placeholder Image" class="w-full h-48 object-cover group-hover:scale-125 duration-1000" /></div>
-                            <div class="px-1 py-4 font-noto">
-                                <div class="font-bold text-lg mb-2">{post.title}</div>
-                                <div class="text-[16px] text-gray-700 text-base">{post.content.substring(0, 95) + '...'}</div>
+                        <div id='card' key={post.id} className="bg-white rounded-lg border p-4 group">
+                            <div className='overflow-hidden rounded-md'><img src={sajek} alt="Placeholder Image" className="w-full h-48 object-cover group-hover:scale-125 duration-1000" /></div>
+                            <div className="px-1 py-4 font-noto">
+                                <div className="font-bold text-lg mb-2">{post.title}</div>
+                                <div className="text-[16px] text-gray-700 text-base">{post.content.substring(0, 95) + '...'}</div>
                             </div>
-                            <div class="px-1 py-2">
-                                <Link to={`/travel_blog/${post.id}`} href="#" class="text-sm text-blue-500 hover:underline">Read More</Link>
+                            <div className="px-1 py-2">
+                                <Link to={`/travel_blog/${post.id}`} href="#" className="text-sm text-blue-500 hover:underline">Read More</Link>
                             </div>
                         </div>
                     ))
@@ -243,7 +243,7 @@ const Blog = ({head, limit}) => {
                 )}
             </div>
             {(limit!==-1) &&  <div className='mt-8 w-full flex justify-center'>
-                <Link to='/travel_blog' className='px-8 py-2 rounded border-2 border-slate-900 hover:bg-slate-900 hover:text-white duration-200 font-semibold'>
+                <Link to='/travel_blog' className='px-8 py-2 rounded border-2 border-slate-900 hover:bg-slate-900 hover:text-white duration-200 text-sm font-semibold'>
                     See More
                 </Link>
             </div>}
