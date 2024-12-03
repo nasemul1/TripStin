@@ -338,7 +338,7 @@ const Blog = ({head, show, limit}) => {
     };
 
     return (
-        <div class="container mx-auto my-10 p-4">
+        <div className="container mx-auto my-10 p-4">
             <div className="mb-7 w-full flex items-center gap-x-5">
                 <div className="flex-grow h-[2px] bg-gradient-to-l from-gray-300"></div>
                 <h2 className="text-2xl sm:text-3xl text-gray-700 font-bold font-merienda">{head}</h2>

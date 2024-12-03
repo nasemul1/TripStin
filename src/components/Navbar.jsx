@@ -3,6 +3,12 @@ import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { Divide as Hamburger } from "hamburger-react";
 
+import Alpine from 'alpinejs'
+ 
+window.Alpine = Alpine;
+ 
+Alpine.start();
+
 const Navbar = ({ rName }) => {
   const navigate = useNavigate();
   const [isOpen, setOpen] = useState(false);
@@ -67,48 +73,9 @@ const Navbar = ({ rName }) => {
         </NavLink>
 
         {/* Travel Blog with Dropdown */}
-        <div className="relative">
-          <NavLink
-            to='/travel_blog'
-            onClick={toggleDropdown}
-            className="flex flex-col items-center gap-1 focus:outline-none"
-          >
-            <p className="px-2 py-1 rounded-md flex items-center gap-x-1 hover:bg-slate-50">
-              Travel Blog
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-              </svg>
-            </p>
-          </NavLink>
-          {showDropdown && (
-            <ul className="absolute top-full left-0 bg-white shadow-md overflow-hidden rounded-md mt-2 text-slate-900">
-              <li>
-                <NavLink
-                  className="block px-4 py-2 hover:bg-slate-100"
-                  onClick={() => setShowDropdown(false)}
-                >
-                  Destinations
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className="block px-4 py-2 hover:bg-slate-100"
-                  onClick={() => setShowDropdown(false)}
-                >
-                  Categories
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className="block px-4 py-2 hover:bg-slate-100"
-                  onClick={() => setShowDropdown(false)}
-                >
-                  Top Blogs
-                </NavLink>
-              </li>
-            </ul>
-          )}
-        </div>
+        <NavLink to='/travel_blog' className="flex flex-col items-center gap-1">
+          <p className="px-2 py-1 rounded-md hover:bg-slate-50">Travel Blogs</p>
+        </NavLink>
 
         {!loggedIn ? (
           <>
