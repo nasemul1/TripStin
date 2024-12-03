@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import side from '../../images/destination/sunamganj.webp';
+import side from '../../images/components-img/sundarban.webp';
 import { toast } from 'react-toastify';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+import BackButton from '../../components/Button/BackButton';
 
 const SignUp = () => {
   const URL = import.meta.env.VITE_API_URL;
@@ -88,12 +89,8 @@ const SignUp = () => {
   return (
     <section className="min-h-screen flex items-center justify-center">
       <div className="flex rounded-2xl shadow-lg max-w-3xl p-5 items-center relative">
-        <Link to='/' className='absolute -top-5 sm:top-5 left-5 p-[6px]  border hover:border-red-400 rounded-full flex items-center justify-center group'>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 group-hover:text-red-400">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-          </svg>
-        </Link>
-        <div className="md:w-1/2 px-8 md:px-16">
+        <BackButton/>
+        <div className="md:w-1/2 px-8 md:px-12">
           <h2 className="font-bold text-2xl">Welcome Back👋</h2>
           <p className="text-sm mt-2">Explore your next adventure with us - the journey begins now!</p>
           <form onSubmit={handleLogin} className="flex flex-col gap-4">
@@ -133,9 +130,9 @@ const SignUp = () => {
             Sign Up with Google
           </button> */}
 
-          <div className="mt-3 text-xs flex justify-between items-center text-gray-950">
+          <div className="mt-3 text-sm flex justify-start items-center text-gray-950">
             <p>Already have an account?</p>
-            <Link to='/signin' className="py-2 px-5 sm:px-2 lg:px-5 bg-white text-blue-800 border rounded-md hover:scale-110 duration-300">Sign In</Link>
+            <Link to='/signin' className="ml-2 bg-white text-blue-800">Sign In</Link>
           </div>
         </div>
         <div className="md:block hidden w-1/2 h-[621px] relative">
