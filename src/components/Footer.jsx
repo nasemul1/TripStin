@@ -1,6 +1,8 @@
 import React from 'react'
 import logoW from '../assets/logo_w.png'
 import { Link } from 'react-router-dom'
+import Mailto from './small/Mailto'
+import Callto from './small/Callto'
 
 const Footer = () => {
   return (
@@ -51,13 +53,13 @@ const Footer = () => {
                     <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-200 uppercase title-font">About</h2>
                     <nav className="mb-10 list-none">
                         <li className="mt-3">
-                            <a className="text-gray-500 cursor-pointer hover:text-gray-400">Company</a>
+                            <Link to='/company' className="text-gray-500 cursor-pointer hover:text-gray-400">Company</Link>
                         </li>
                         <li className="mt-3">
-                            <a className="text-gray-500 cursor-pointer hover:text-gray-400">Careers</a>
+                            <Link to='/careers' className="text-gray-500 cursor-pointer hover:text-gray-400">Careers</Link>
                         </li>
                         <li className="mt-3">
-                            <a className="text-gray-500 cursor-pointer hover:text-gray-400">Blog</a>
+                            <Link to='/travel_blog' className="text-gray-500 cursor-pointer hover:text-gray-400">Blog</Link>
                         </li>
                     </nav>
                 </div>
@@ -65,13 +67,13 @@ const Footer = () => {
                     <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-200 uppercase title-font">Support</h2>
                     <nav className="mb-10 list-none">
                         <li className="mt-3">
-                            <a className="text-gray-500 cursor-pointer hover:text-gray-400">Contact Support</a>
+                            <Link to='/contact' className="text-gray-500 cursor-pointer hover:text-gray-400">Contact Support</Link>
                         </li>
                         <li className="mt-3">
-                            <a className="text-gray-500 cursor-pointer hover:text-gray-400">Help Resources</a>
+                            <Link to='/help' className="text-gray-500 cursor-pointer hover:text-gray-400">Help Resources</Link>
                         </li>
                         <li className="mt-3">
-                            <a className="text-gray-500 cursor-pointer hover:text-gray-400">Release Updates</a>
+                            <Link to='/update' className="text-gray-500 cursor-pointer hover:text-gray-400">Release Updates</Link>
                         </li>
                     </nav>
                 </div>
@@ -80,26 +82,28 @@ const Footer = () => {
                     </h2>
                     <nav className="mb-10 list-none">
                         <li className="mt-3">
-                            <a className="text-gray-500 cursor-pointer hover:text-gray-400">Terms &amp; Privacy</a>
+                            <Link to='/privacy' className="text-gray-500 cursor-pointer hover:text-gray-400">Terms &amp; Privacy</Link>
                         </li>
                         <li className="mt-3">
-                            <a className="text-gray-500 cursor-pointer hover:text-gray-400">FAQ</a>
+                            <Link to='/faq' className="text-gray-500 cursor-pointer hover:text-gray-400">FAQ</Link>
                         </li>
                     </nav>
                 </div>
                 <div className="w-full px-4 lg:w-1/4 md:w-1/2">
                     <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-200 uppercase title-font">Contact</h2>
-                    <nav className="mb-10 list-none">
+                    <div className="mb-10 list-none">
                         <li className="mt-3">
-                            <a className="text-gray-500 cursor-pointer hover:text-gray-400">Send a Message</a>
+                        <Mailto email="info@tripstins.com" subject="Hello & Welcome" body="Hi there! write here...">
+                            Mail Us!
+                        </Mailto>
                         </li>
                         <li className="mt-3">
-                            <a className="text-gray-500 cursor-pointer hover:text-gray-400">Request a Quote</a>
+                            <Callto phone="+8801712796362">+8801712796362</Callto>
                         </li>
-                        <li className="mt-3">
-                            <a className="text-gray-500 cursor-pointer hover:text-gray-400">+123-456-7890</a>
+                        <li className='mt-3'>
+                            <p className="text-gray-500">46/6/B, Jhigatola, Dhanmondi</p>
                         </li>
-                    </nav>
+                    </div>
                 </div>
             </div>
         </div>

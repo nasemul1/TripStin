@@ -366,7 +366,7 @@ const Blog = ({head, show, limit}) => {
                 </Link>
             </div>}
 
-            {(show===0) && <div className="flex justify-center items-center mt-6">
+            {(show===0) && <div className="font-poppins text-sm flex justify-center items-center mt-6">
                 <button
                     onClick={handlePrevPage}
                     disabled={currentPage === 1}

@@ -3,12 +3,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { Divide as Hamburger } from "hamburger-react";
 
-import Alpine from 'alpinejs'
- 
-window.Alpine = Alpine;
- 
-Alpine.start();
-
 const Navbar = ({ rName }) => {
   const navigate = useNavigate();
   const [isOpen, setOpen] = useState(false);
