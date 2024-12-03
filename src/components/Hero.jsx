@@ -6,8 +6,8 @@ import hero from '../images/components-img/hero.webp';
 const Hero = () => {
   return (
     <div className='w-full h-52 sm:h-72 lg:h-[360px] flex justify-center relative'>
-        <div className='w-full h-full relative rounded-xl overflow-hidden group'>
-            <img src={hero} alt="hero image" className='group-hover:scale-110 duration-1000 transform' />
+        <div className='w-full h-full relative rounded-xl overflow-hidden'>
+            <img src={hero} alt="hero image" />
             <h1 className='absolute top-1/2 left-1/2 transform translate-x-[-50%] translate-y-[-50%] text-white text-xl sm:text-2xl lg:text-3xl font-bold'>Exploring Made Easy</h1>
         </div>
         {/* <div className='mx-auto w-[70%] sm:w-[80%] md:w-[90%] absolute top-[80%] z-40 rounded-lg overflow-hidden'>

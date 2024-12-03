@@ -35,7 +35,7 @@ const Profile = () => {
         </div>
       </div>
       {veri && <p className='mt-4 p-2 w-full bg-red-500 rounded text-center text-white'>We have sent an email. Please verify your email first.</p>}
-      <div className='min-h-[420px]'><Blog head="My Blogs" limit={-1}/></div>
+      <div className='min-h-[420px]'><Blog head="My Blogs" show={0} limit={12}/></div>
     </div>
   )
 }

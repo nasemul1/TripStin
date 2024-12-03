@@ -127,12 +127,6 @@ const Navbar = ({ rName }) => {
                 <div className="w-8 h-8 rounded-full bg-blog bg-cover border-2 border-blue-300"></div>
               </div>
             </NavLink>
-            <button
-              onClick={handleLogout}
-              className="px-2 py-1 rounded-md hover:bg-slate-50 text-red-600"
-            >
-              Logout
-            </button>
           </div>
         )}
       </ul>

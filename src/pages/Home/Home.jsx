@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div className='mx-auto mt-28 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
             <Hero />
-            <Blog head="Travel Blog" limit={8}/>
+            <Blog head="Travel Blog" show={1} limit={8}/>
         </div>
     )
 }
