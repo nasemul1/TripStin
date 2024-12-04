@@ -42,7 +42,7 @@ const SignIn = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        toast.error("Login Failed 😕", {
+        toast.error(errorData.error + " 🙁", {
           position: "bottom-right",
         });
       }
@@ -60,7 +60,9 @@ const SignIn = () => {
         navigate('/profile');
       }
     } catch (err) {
-      toast.error(err.message);
+      toast.error(err.message, {
+        position: "bottom-right",
+      });
     } finally {
       setLoading(false);
     }

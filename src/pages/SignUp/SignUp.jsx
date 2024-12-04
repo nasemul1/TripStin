@@ -34,6 +34,7 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const [type, setType] = useState("user");
   const [rePass, setRepass] = useState("");
 
   
@@ -52,7 +53,7 @@ const SignUp = () => {
               'Content-Type': 'application/json',
               Accept: 'application/json',
             },
-            body: JSON.stringify({ name, username, email, phone, password }),
+            body: JSON.stringify({ name, username, email, phone, password, type }),
           });
     
           if (!response.ok) {
