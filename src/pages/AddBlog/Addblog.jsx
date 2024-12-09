@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Editor from '../../components/Editor/Editor';
 import { toast } from 'react-toastify';
 
 const Addblog = () => {
+  // variables
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [image, setImage] = useState(null);
@@ -11,6 +12,14 @@ const Addblog = () => {
   const [isFeatured, setIsFeatured] = useState(false);
   const [userId, setUserId] = useState('123');
 
+  // back function
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+      navigate(-1);
+  };
+
+  // api section
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setImage(file);
@@ -73,8 +82,8 @@ const Addblog = () => {
             <Editor value={content} setValue={setContent} />
           </div>
           <div className='flex gap-x-3'>
-            <button type="submit" className='px-3 py-1 sm:px-4 sm:py-2 border-2 border-slate-900 hover:bg-slate-900 text-slate-900 hover:text-white duration-300 font-semibold rounded'>Create</button>
-            <Link to='/profile' className='px-3 py-1 sm:px-4 sm:py-2 border-2 border-red-500 hover:bg-red-500 text-red-500 hover:text-white duration-300 font-semibold rounded'>Back</Link>
+            <button type="submit" className='px-4 py-2 border-2 border-slate-900 hover:bg-slate-900 text-slate-900 hover:text-white duration-300 font-semibold rounded'>Create</button>
+            <button type="button" onClick={handleGoBack} className='px-4 py-2 border-2 border-red-500 hover:bg-red-500 text-red-500 hover:text-white duration-300 font-semibold rounded'>Back</button>
           </div>
       </form>
     </div>

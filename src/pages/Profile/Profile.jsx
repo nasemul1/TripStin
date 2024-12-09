@@ -1,22 +1,24 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import Blog from '../../components/Blog';
 import coverBg from '../../images/components-img/hero.webp';
 import profileBg from '../../images/destination/sunamganj.webp';
 
 const Profile = () => {
+  // variables
   const navigate = useNavigate();
-  const data = JSON.parse(localStorage.getItem('userDetails'));
-
-  let veri = data.email_verified_at;
-  veri = '22-2-12';
+  const [data, setData] = useState('');
 
   useEffect(() => {
     const token = localStorage.getItem('authToken');
     if (!token) {
       navigate('/signin');
     }
+    else{
+      setData(JSON.parse(localStorage.getItem('userDetails')));
+    }
   }, [navigate]);
+
 
   return (
     <div className='mx-auto mt-28 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
@@ -40,7 +42,6 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      {veri && <p className='mt-4 p-2 w-full bg-red-500 rounded text-center text-white'>We have sent an email. Please verify your email first.</p>}
       <div className='min-h-[420px]'><Blog head="My Blogs" show={0} limit={12}/></div>
     </div>
   )

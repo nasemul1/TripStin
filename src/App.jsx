@@ -20,6 +20,7 @@ import Footer from './components/Footer'
 import Addblog from './pages/AddBlog/Addblog'
 import ProfileInfo from './pages/Profile/ProfileInfo'
 import RedirectPage from './pages/EmailVerify/RedirectPage';
+import ProfileEdit from './pages/Profile/ProfileEdit';
 
 const App = () => {
   const location = useLocation();
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/travel_blog/:id" element={<SBlog />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile_info" element={<ProfileInfo />} />
+          <Route path="/profile_edit" element={<ProfileEdit />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/policy" element={<Policy />} />

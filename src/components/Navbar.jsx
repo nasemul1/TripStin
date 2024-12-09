@@ -43,12 +43,6 @@ const Navbar = ({ rName }) => {
     };
   }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem("authToken");
-    window.dispatchEvent(new Event("storage"));
-    navigate("/");
-  };
-
   return (
     <nav
       className={`px-5 sm:px-14 lg:px-28 2xl:px-36 fixed top-0 z-50 w-screen bg-white shadow-md flex items-center justify-between py-5 font-poppins font-medium transition-transform duration-300 ${
