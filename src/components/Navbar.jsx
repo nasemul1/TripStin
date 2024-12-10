@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { Divide as Hamburger } from "hamburger-react";
+import Dropdown from "./Dropdown";
 
 const Navbar = ({ rName }) => {
   const navigate = useNavigate();
@@ -76,12 +77,7 @@ const Navbar = ({ rName }) => {
           </>
         ) : (
           <div className="flex items-center gap-4">
-            <NavLink to="/profile" className="flex flex-col items-center gap-1">
-              <div className="flex items-center gap-x-2">
-                <p>{data.name}</p>
-                <div className="w-8 h-8 rounded-full bg-blog bg-cover border-2 border-blue-300"></div>
-              </div>
-            </NavLink>
+            <Dropdown />
           </div>
         )}
       </ul>

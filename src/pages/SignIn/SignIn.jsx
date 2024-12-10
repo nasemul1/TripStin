@@ -49,7 +49,7 @@ const SignIn = () => {
       else {
         const result = await response.json();
         const { token, user } = result;
-        
+
         localStorage.setItem('authToken', token);
         window.dispatchEvent(new Event("storage"));
         localStorage.setItem('userDetails', JSON.stringify(user));

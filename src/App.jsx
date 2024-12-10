@@ -21,6 +21,7 @@ import Addblog from './pages/AddBlog/Addblog'
 import ProfileInfo from './pages/Profile/ProfileInfo'
 import RedirectPage from './pages/EmailVerify/RedirectPage';
 import ProfileEdit from './pages/Profile/ProfileEdit';
+import Admin from './pages/Admin/Admin';
 
 const App = () => {
   const location = useLocation();
@@ -33,6 +34,7 @@ const App = () => {
       { !shouldHideNavbar && <Navbar /> }
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/admin" element={<Admin />} />
           {/* <Route path="/destinations" element={<Destinations />} /> */}
           {/* <Route path="/destinations/:id" element={<SingleDestination />} /> */}
           <Route path="/travel_blog" element={<TravelBlog />} />
