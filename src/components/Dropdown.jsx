@@ -2,6 +2,8 @@ import React from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 
 const Dropdown = () => {
+
+    const ts_username = localStorage.getItem('ts_username');
     const navigate = useNavigate();
     const handleClick = () => {
         localStorage.removeItem('authToken');
@@ -13,7 +15,7 @@ const Dropdown = () => {
     <div className="group relative cursor-pointer font-poppins">
         <NavLink to="/profile" className="menu-hover flex flex-col items-center gap-1">
             <div className="flex items-center gap-x-2">
-                <p>user</p>
+                <p>{ts_username}</p>
                 <div className="w-8 h-8 rounded-full bg-blog bg-cover border-2 border-blue-300"></div>
             </div>
         </NavLink>

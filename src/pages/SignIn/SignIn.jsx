@@ -53,6 +53,8 @@ const SignIn = () => {
         localStorage.setItem('authToken', token);
         window.dispatchEvent(new Event("storage"));
         localStorage.setItem('userDetails', JSON.stringify(user));
+        localStorage.setItem('ts_username', user.username);
+        localStorage.setItem('ts_name', user.name);
 
         toast("Login Sucessfull 🥳", {
           position: "bottom-right",

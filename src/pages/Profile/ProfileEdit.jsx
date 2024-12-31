@@ -42,6 +42,7 @@ const ProfileEdit = () => {
     const token = localStorage.getItem('authToken');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [userId, setUserId] = useState('');
 
     // fetch api
     useEffect(() => {
@@ -58,6 +59,7 @@ const ProfileEdit = () => {
                 const response = await fetch(url + '/user', options);
                 const fetchData = await response.json();
                 const user = fetchData.user;
+                setUserId(user.user_info.user_id);
                 setFormData({
                     name: user.name || "",
                     email: user.email || "",
@@ -101,7 +103,6 @@ const ProfileEdit = () => {
             setFormData({ ...formData, [name]: value });
         }
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
     
@@ -111,26 +112,21 @@ const ProfileEdit = () => {
         });
     
         const options = {
-          method: "PUT",
-          headers: {
-            Accept: "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: form,
-        };
-    
-        try {
-          const response = await fetch(url + `/user/$formData.user}`, options);
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            method: 'PUT',
+            headers: {
+              Accept: 'application/json',
+              Authorization: `Bearer ${token}`
+            },
+            body: form
+          };
+          
+          try {
+            const response = await fetch(url + '/user/' + userId, options);
+            const data = await response.json();
+            console.log(data);
+          } catch (error) {
+            console.error(error);
           }
-          const data = await response.json();
-          toast.success("Profile updated successfully!");
-          console.log(data);
-        } catch (error) {
-          toast.error("An error occurred while updating the profile.");
-          console.error(error);
-        }
     };
 
     if (loading) {
@@ -138,7 +134,6 @@ const ProfileEdit = () => {
             <BarLoader color='#0C3358' />
         </div>;
     }
-    
     return (
         <div className="mx-auto mt-28 mb-8 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] font-poppins text-slate-800">
             <div className="w-full lg:w-8/12 px-4 mx-auto mt-6">
@@ -211,14 +206,14 @@ const ProfileEdit = () => {
                                 </div>
                                 <div className="w-full lg:w-6/12 px-4">
                                     <div className="relative w-full mb-3">
-                                        <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="fathername">
+                                        <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="father_name">
                                         Father Name
                                         </label>
                                         <input
                                             className=" px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm border focus:outline-none focus:border-slate-800 w-full"
                                             type="text"
-                                            name="fathername"
-                                            id="fathername"
+                                            name="father_name"
+                                            id="father_name"
                                             value={formData.father_name}
                                             onChange={handleChange}
                                         />
@@ -226,14 +221,14 @@ const ProfileEdit = () => {
                                 </div>
                                 <div className="w-full lg:w-6/12 px-4">
                                     <div className="relative w-full mb-3">
-                                        <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="mothername">
+                                        <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="mother_name">
                                         Mother Name
                                         </label>
                                         <input
                                             className=" px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm border focus:outline-none focus:border-slate-800 w-full"
                                             type="text"
-                                            name="mothername"
-                                            id="mothername"
+                                            name="mother_name"
+                                            id="mother_name"
                                             value={formData.mother_name}
                                             onChange={handleChange}
                                         />

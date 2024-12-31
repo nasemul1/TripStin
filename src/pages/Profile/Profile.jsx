@@ -6,6 +6,8 @@ import profileBg from '../../images/destination/sunamganj.webp';
 
 const Profile = () => {
   // variables
+  const ts_username = localStorage.getItem('ts_username');
+  const ts_name = localStorage.getItem('ts_name');
   const navigate = useNavigate();
   const [data, setData] = useState('');
 
@@ -32,8 +34,8 @@ const Profile = () => {
           </div>
           <div className='pl-32 sm:pl-44 2xl:pl-60 flex flex-col sm:flex-row justify-between gap-y-4 sm:gap-y-0'>
             <div>
-              <h1 className='2xl:text-2xl text-slate-900 font-bold'>{data.name}</h1>
-              <h2 className='text-xs 2xl:text-lg text-slate-900'>@{data.username}</h2>
+              <h1 className='2xl:text-2xl text-slate-900 font-bold'>{ts_name}</h1>
+              <h2 className='text-xs 2xl:text-lg text-slate-900'>@{ts_username}</h2>
             </div>
             <div className='flex gap-2'>
               <Link to='/addblog' className='px-3 py-1 sm:py-2 border-2 border-slate-900 hover:bg-slate-900 text-[9px] sm:text-sm hover:text-white duration-300 text-slate-900 font-semibold rounded flex items-center'>Add Blog</Link>
