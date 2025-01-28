@@ -30,7 +30,7 @@ const TravelBlog = () => {
     // }, [URL]);
 
     return (
-        <div className='mt-16 w-full flex flex-col items-center'>
+        <div className='mx-auto px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] mt-16 w-full flex flex-col items-center'>
             <Blog head='Travel Blog' show={0} limit={12}/>
         </div>
     );
