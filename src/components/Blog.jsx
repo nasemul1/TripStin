@@ -338,13 +338,13 @@ const Blog = ({head, show, limit}) => {
     };
 
     return (
-        <div className="container mx-auto my-10 p-4">
+        <div className="w-full mx-auto my-10">
             <div className="mb-7 w-full flex items-center gap-x-5">
                 <div className="flex-grow h-[2px] bg-gradient-to-l from-gray-300"></div>
                 <h2 className="text-2xl sm:text-3xl text-gray-700 font-bold font-merienda">{head}</h2>
                 <div className="flex-grow h-[2px] bg-gradient-to-r from-gray-300"></div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 min-[1960px]:grid-cols-5 gap-4">
                 {currentItems.map((post)=>(
                         <div id='card' key={post.id} className="bg-white rounded-lg border p-4 group">
                             <div className='overflow-hidden rounded-md'><img src={sajek} alt="Placeholder Image" className="w-full h-48 object-cover group-hover:scale-125 duration-1000" /></div>
@@ -390,47 +390,3 @@ const Blog = ({head, show, limit}) => {
 };
 
 export default Blog;
-
-
-{/* <Link key={post.id} to='/travel_blog/1' className="p-2 flex flex-col items-center group">
-    <div className='w-[340px] h-[180px] overflow-hidden rounded-md'>
-    <img src={sajek} alt="" className='w-[340px] object-cover transition-transform duration-1000 ease-in-out group-hover:scale-125'/>
-    </div>
-    <h3 className='mt-2 w-[340px] text-lg group-hover:text-red-500 text-center font-semibold'>{post.title}</h3>
-    </Link> */}
-
-    // <div className='mt-10 w-full flex flex-col items-center'>
-    //     <h2 className='mb-3 text-2xl sm:text-3xl text-gray-700 font-bold font-merienda'>{head}</h2>
-    //     <div className='flex flex-col items-center'>
-    //         {/* {loading && <p>Loading...</p>} */}
-    //         {/* {error && <p className='text-red-500'>{error}</p>} */}
-    
-    //         <div id='data-here' className='w-full flex flex-wrap justify-center sm:justify-around xl:justify-between sm:gap-x-4 xl:gap-x-8'>
-    //             {Array.isArray(data) && data.length > 0 ? (
-    //                 data.slice(0, 9).map((post) => (
-    //                     <Link
-    //                         key={post.id}
-    //                         to={`/travel_blog/${post.id}`}
-    //                         className='p-4 flex flex-col items-center group'
-    //                     >
-    //                         <div className='w-[280px] h-[180px] overflow-hidden rounded-md'>
-    //                             <img
-    //                                 src={sajek}
-    //                                 alt={post.title}
-    //                                 className='w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-125'
-    //                             />
-    //                         </div>
-    //                         <h3 className='mt-2 w-[280px] text-lg text-center font-semibold group-hover:text-red-500'>
-    //                             {post.title}
-    //                         </h3>
-    //                     </Link>
-    //                 ))
-    //             ) : (
-    //                 !loading && <p className='text-gray-500'>No posts available</p>
-    //             )}
-    //         </div>
-    //         <Link to='/travel_blog' className='mt-6 px-6 sm:px-10 py-[6px] sm:py-2 rounded-md bg-black hover:bg-slate-800 text-sm text-white font-md'>
-    //             See More
-    //         </Link>
-    //     </div>
-    // </div>

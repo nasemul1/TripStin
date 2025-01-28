@@ -46,7 +46,7 @@ const Navbar = ({ rName }) => {
 
   return (
     <nav
-      className={`px-5 sm:px-14 lg:px-28 2xl:px-36 fixed top-0 z-50 w-full bg-white shadow-md flex items-center justify-between py-5 font-poppins font-medium transition-transform duration-300 ${
+      className={`mx-auto px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] fixed top-0 z-50 w-full bg-white shadow-md flex items-center justify-between py-5 font-poppins font-medium transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
